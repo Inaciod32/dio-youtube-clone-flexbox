@@ -37,9 +37,8 @@ youtube-clone-flexbox/
 │   └── style.css
 ├── assets/
 │   ├── favicon.svg
-│   ├── profile-davi.png
-│   ├── thumb-*.webp
-│   └── thumb-*.svg
+│   ├── profile-davi.webp
+│   └── thumb-*.webp
 └── README.md
 ```
 
