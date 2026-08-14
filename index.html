@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clone educacional de uma página de vídeo inspirado no YouTube, desenvolvido com HTML e CSS Flexbox.">
+  <title>DevTube — Clone com Flexbox</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="icon-button" type="button" aria-label="Abrir menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
+      </button>
+
+      <a class="brand" href="#" aria-label="DevTube - página inicial">
+        <span class="brand__play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 7.5v9l7-4.5-7-4.5Z"/></svg>
+        </span>
+        <span class="brand__name">DevTube</span>
+      </a>
+    </div>
+
+    <form class="search" role="search">
+      <label class="sr-only" for="search-input">Pesquisar</label>
+      <input id="search-input" type="search" placeholder="Pesquisar" autocomplete="off">
+      <button class="search__button" type="submit" aria-label="Pesquisar">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+      </button>
+    </form>
+
+    <div class="topbar__actions">
+      <button class="icon-button topbar__mobile-search" type="button" aria-label="Pesquisar">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+      </button>
+      <button class="icon-button" type="button" aria-label="Criar vídeo">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5.5" width="14" height="13" rx="2"/><path d="m17 10 4-2v8l-4-2"/><path d="M10 9v6M7 12h6"/></svg>
+      </button>
+      <button class="icon-button" type="button" aria-label="Notificações">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.8 9.5a5.2 5.2 0 0 1 10.4 0c0 6 2.2 6.1 2.2 7.5H4.6c0-1.4 2.2-1.5 2.2-7.5Z"/><path d="M9.7 19a2.5 2.5 0 0 0 4.6 0"/></svg>
+      </button>
+      <button class="avatar avatar--small" type="button" aria-label="Abrir perfil"><img src="assets/profile-davi.webp" alt=""></button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="watch-column" aria-labelledby="video-title">
+      <div class="player" role="img" aria-label="Miniatura de um vídeo sobre desenvolvimento front-end">
+        <img src="assets/thumb-html.webp" alt="Capa do vídeo Do Zero ao Dev: dominando HTML e CSS">
+        <div class="player__overlay" aria-hidden="true">
+          <span class="player__big-play">
+            <svg viewBox="0 0 24 24"><path d="M9 7v10l8-5-8-5Z"/></svg>
+          </span>
+        </div>
+        <div class="player__controls" aria-hidden="true">
+          <span class="player__timeline"><span></span></span>
+          <div class="player__controls-row">
+            <div class="player__controls-left">
+              <svg viewBox="0 0 24 24"><path d="M8 6v12l10-6-10-6Z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M5 9v6h4l5 4V5L9 9H5Z"/><path d="M17 9.5a4 4 0 0 1 0 5"/></svg>
+              <span>0:42 / 12:18</span>
+            </div>
+            <div class="player__controls-right">
+              <svg viewBox="0 0 24 24"><path d="M5 8V5h3M16 5h3v3M19 16v3h-3M8 19H5v-3"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1 id="video-title" class="video-title">Do Zero ao Dev: como HTML e CSS trabalham juntos na prática</h1>
+
+      <div class="video-meta-row">
+        <div class="channel-block">
+          <div class="avatar avatar--channel"><img src="assets/profile-davi.webp" alt="Foto de perfil de Davi Inacio"></div>
+          <div class="channel-block__text">
+            <strong>Davi Inacio</strong>
+            <span>12,4 mil inscritos</span>
+          </div>
+          <button class="subscribe-button" type="button">Inscrever-se</button>
+        </div>
+
+        <div class="actions-row" aria-label="Ações do vídeo">
+          <div class="like-group">
+            <button class="action-button action-button--like" type="button" aria-label="Gostei">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 20H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3.5M8.5 20h8.1a2 2 0 0 0 1.9-1.4l2.2-7A2 2 0 0 0 18.8 9H14l.8-3.1A2.3 2.3 0 0 0 10.4 4L8.5 9v11Z"/></svg>
+              <span>2,1 mil</span>
+            </button>
+            <button class="action-button action-button--dislike" type="button" aria-label="Não gostei">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 4H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3.5M8.5 4h8.1a2 2 0 0 1 1.9 1.4l2.2 7a2 2 0 0 1-1.9 2.6H14l.8 3.1a2.3 2.3 0 0 1-4.4 1.9l-1.9-5V4Z"/></svg>
+            </button>
+          </div>
+
+          <button class="action-button" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.2"/><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="19" r="2.2"/><path d="m8 11 8-5M8 13l8 5"/></svg>
+            <span>Compartilhar</span>
+          </button>
+
+          <button class="action-button action-button--desktop" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4V4Z"/></svg>
+            <span>Salvar</span>
+          </button>
+
+          <button class="action-button action-button--compact" type="button" aria-label="Mais ações">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <article class="description-card">
+        <strong>28 mil visualizações · há 3 dias</strong>
+        <p>Neste vídeo, você acompanha uma explicação prática de como a estrutura HTML e a estilização CSS se conectam para formar uma interface moderna e responsiva.</p>
+        <button type="button">Mostrar mais</button>
+      </article>
+
+      <section class="comments" aria-labelledby="comments-title">
+        <div class="comments__heading">
+          <h2 id="comments-title">326 comentários</h2>
+          <button type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+            Ordenar por
+          </button>
+        </div>
+        <div class="comment-input">
+          <div class="avatar avatar--small"><img src="assets/profile-davi.webp" alt=""></div>
+          <div class="comment-input__line">Adicione um comentário...</div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="recommendations" aria-label="Vídeos recomendados">
+      <div class="recommendations__filters">
+        <button class="filter-chip filter-chip--active" type="button">Todos</button>
+        <button class="filter-chip" type="button">Programação</button>
+        <button class="filter-chip" type="button">Front-end</button>
+      </div>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-html.webp" alt=""><span>11:04</span></div>
+        <div class="video-card__info"><h3>HTML sem mistério: estrutura de uma página real</h3><p>DevLab</p><p>48 mil visualizações · há 1 semana</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-flex.webp" alt=""><span>14:26</span></div>
+        <div class="video-card__info"><h3>Flexbox na prática: domine alinhamento e distribuição</h3><p>Code Direto</p><p>92 mil visualizações · há 2 semanas</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-responsive.webp" alt=""><span>09:18</span></div>
+        <div class="video-card__info"><h3>Responsividade: transforme desktop em mobile</h3><p>Front-end Hoje</p><p>31 mil visualizações · há 5 dias</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-css.webp" alt=""><span>17:41</span></div>
+        <div class="video-card__info"><h3>CSS moderno: propriedades que você precisa dominar</h3><p>DevLab</p><p>105 mil visualizações · há 1 mês</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-git.webp" alt=""><span>12:09</span></div>
+        <div class="video-card__info"><h3>Git e GitHub do zero: publique seu primeiro projeto</h3><p>Código Aberto</p><p>76 mil visualizações · há 3 semanas</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-js.webp" alt=""><span>18:52</span></div>
+        <div class="video-card__info"><h3>JavaScript: o primeiro passo para páginas interativas</h3><p>Code Direto</p><p>121 mil visualizações · há 1 mês</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-portfolio.webp" alt=""><span>08:36</span></div>
+        <div class="video-card__info"><h3>Seu primeiro portfólio Front-end: o que colocar?</h3><p>Carreira Dev</p><p>39 mil visualizações · há 4 dias</p></div>
+      </a>
+
+      <a class="video-card" href="#">
+        <div class="video-card__thumb"><img src="assets/thumb-devtools.webp" alt=""><span>10:44</span></div>
+        <div class="video-card__info"><h3>DevTools: encontre e corrija erros no CSS</h3><p>Front-end Hoje</p><p>22 mil visualizações · há 6 dias</p></div>
+      </a>
+    </aside>
+  </main>
+</body>
+</html>
